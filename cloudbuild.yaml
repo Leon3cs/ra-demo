@@ -2,9 +2,6 @@ steps:
 - name: 'node'
   entrypoint: 'npm'
   args: ['install']
-- name: 'node'
-  entrypoint: 'npm'
-  args: ['run', 'start']
 
 options:
   logging: CLOUD_LOGGING_ONLY
