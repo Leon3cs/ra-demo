@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reclama App</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="rq-header">
+    <div class="rq-logo">Reclame<span>AQUI</span></div>
+  </header>
+
+  <main>
+    <div class="card">
+      <div class="page-header">
+        <h1>Reclamações</h1>
+        <a class="btn" href="nova.html">+ Nova reclamação</a>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Status</th>
+            <th>Data de abertura</th>
+            <th>ID</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="lista-body"></tbody>
+      </table>
+
+      <div id="empty-state" class="empty-state" style="display:none">
+        Nenhuma reclamação cadastrada ainda.
+      </div>
+    </div>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/list.js"></script>
+</body>
+</html>

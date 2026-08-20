@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nova reclamação · Reclama App</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="rq-header">
+    <div class="rq-logo">Reclame<span>AQUI</span></div>
+  </header>
+
+  <main>
+    <div class="card wizard-card">
+      <form id="form-nova">
+        <div class="wizard-topline">
+          <a class="voltar-link" id="btn-voltar">&larr; Voltar</a>
+          <div class="progress-bar">
+            <div class="segment active" id="seg-1"></div>
+            <div class="segment" id="seg-2"></div>
+          </div>
+          <div class="etapa-label" id="etapa-label">Etapa 1 de 2</div>
+        </div>
+        <div class="autosave-status" id="autosave-status"></div>
+
+        <section id="step-1" class="wizard-step">
+          <div class="wizard-icon">📣</div>
+          <h1 class="wizard-title">Qual sua reclamação</h1>
+          <p class="wizard-subtitle">Reclamações bem detalhadas e com anexos são resolvidas <strong>mais rápido</strong>.</p>
+
+          <textarea id="texto" placeholder="Descreva o que aconteceu..." maxlength="2000"></textarea>
+          <div class="feedback erro" id="texto-erro" style="display:none">Descreva sua reclamação antes de continuar.</div>
+
+          <div class="wizard-toolbar">
+            <button type="button" class="icon-square" title="Anexar arquivo">📎</button>
+            <button type="button" class="icon-square" title="Ditar por voz">🎙️</button>
+            <div style="flex:1"></div>
+            <button type="button" class="btn" id="btn-continuar">Continuar &rarr;</button>
+          </div>
+        </section>
+
+        <section id="step-2" class="wizard-step" style="display:none">
+          <h1 class="wizard-title">Complete e revise as informações</h1>
+
+          <div class="secao-card">
+            <label class="secao-label">Sua reclamação</label>
+            <div class="texto-preview" id="texto-preview"></div>
+          </div>
+
+          <div class="secao-card">
+            <label class="secao-label">Anexos</label>
+            <div class="anexos-slots">
+              <label class="anexo-slot">+<input type="file" hidden /></label>
+              <label class="anexo-slot">+<input type="file" hidden /></label>
+              <label class="anexo-slot">+<input type="file" hidden /></label>
+            </div>
+          </div>
+
+          <div class="secao-card">
+            <label class="secao-label" for="telefone">Informe um celular caso a empresa precise entrar em contato</label>
+            <input type="text" id="telefone" placeholder="(00) 00000-0000" />
+            <label class="checkbox-row">
+              <input type="checkbox" id="whatsapp-opt" /> Receber notificações no WhatsApp
+            </label>
+          </div>
+
+          <div class="wizard-toolbar">
+            <div style="flex:1"></div>
+            <button type="submit" class="btn" id="btn-publicar">📣 Publicar reclamação</button>
+          </div>
+          <div id="feedback" class="feedback"></div>
+        </section>
+      </form>
+    </div>
+  </main>
+
+  <div class="rq-footer">
+    <a href="#" onclick="return false">Nossos termos de uso</a>
+    <a href="#" onclick="return false">Política de privacidade</a>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/create.js"></script>
+</body>
+</html>
